@@ -1,34 +1,59 @@
 # tensorflow_rbm
 
-#### Description
+### Dependencies
+
+### Description
 This is a tensorflow based implementation of restricted boltzmann machines.
+<br>
+Also the code for pruning in RBM,Zhiwen Zuo et al.([https://arxiv.org/abs/1901.07066])
+<br>
 
-#### Code
-tfrbm file contains the code to build,train and evaluate RBM.
+### Dataset
+MNIST,OCR letters,NORB and CalTech 101 Silhouettes datasets can be downloaded by runing the shell scripts
+in data folder.
 
-tfrbm->rbm.py define BBRBM and GBRBM
+### Code
+```
+.
+├── README.md
+└── tfrbm
+    ├── base_rbm.py
+    ├── dataset.py
+    ├── plot_utils.py
+    ├── rbm_ais.py
+    ├── rbm.py
+    └── utils.py
+├──...
 
-tfrbm->base_rbm.py define basic RBM
+```
+tfrbm folder contains the code to build,train and evaluate RBM.
 
-tfrbm->rbm_ais.py AIS implementation
+>rbm.py define BBRBM and GBRBM
 
-tfrbm->utils.py contains tools tfrbm->plot_utils.py contains plot tools 
+>base_rbm.py define basic RBM
 
-tfrbm->dataset.py process datasets
+>rbm_ais.py Anneal Importance Sampling(AIS) implementation
 
-{dataset}_rbm.py means the build and training on {dataset}.
+>utils.py and plot_utils.py contain tools 
 
-{dataset}_trprpr.py means the pruning experiment on {dataset}.
+>dataset.py process and import datasets
 
-Note that caltech means CalTech 101 Silhouettes 16$\times$16 dataset and caltech0 means CalTech 101 Silhouettes 28$\times$28 dataset.
+>{dataset}_rbm.py build and training on {dataset}.
 
-#### Instructions
-For example for training RBM on MNIST.Run 
+>{dataset}_trprpr.py perform pruning experiment on {dataset}.
 
-`python mnist_rbm.py --algorithm 'CD' --n-gibbs-steps 1 --anneal-lr --lr 0.05 --save-path='/documents/code/experiments/pruning_rbm/mnist/cd-25-500/' --n-hidden 500 --epochs 249`
+Note that {caltech} means CalTech 101 Silhouettes 16$$\times$$16 dataset and {caltech0} means CalTech 101 Silhouettes 28$$\times$$28 dataset.
+
+### Instructions
+For example for training RBM on MNIST dataset
+
+```sh
+python mnist_rbm.py --algorithm 'CD' --n-gibbs-steps 1 --anneal-lr --lr 0.05 --save-path='/documents/code/experiments/pruning_rbm/mnist/cd-25-500/' --n-hidden 500 --epochs 249
+```
 
 For pruning experiment on MNIST.Run
 
-`python mnist_trprtr.py --algorithm 'CD' --n-gibbs-steps 1 --lr 0.05 --anneal-lr --epochs 249  --save-path='/documents/code/experiments/pruning_rbm/mnist/cd-25-500/'`
+```sh
+python mnist_trprtr.py --algorithm 'CD' --n-gibbs-steps 1 --lr 0.05 --anneal-lr --epochs 249  --save-path='/documents/code/experiments/pruning_rbm/mnist/cd-25-500/'
+```
 
-Change the save_path as you like
