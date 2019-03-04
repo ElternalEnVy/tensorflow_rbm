@@ -28,21 +28,21 @@ in data folder.
 ```
 tfrbm folder contains the code to build,train and evaluate RBM.
 
->rbm.py define BBRBM and GBRBM
+>rbm.py defines BBRBM and GBRBM
 
->base_rbm.py define basic RBM
+>base_rbm.py defines basic RBM
 
 >rbm_ais.py Anneal Importance Sampling(AIS) implementation
 
 >utils.py and plot_utils.py contain tools 
 
->dataset.py process and import datasets
+>dataset.py processes and imports datasets
 
 >{dataset}_rbm.py build and training on {dataset}.
 
->{dataset}_trprpr.py perform pruning experiment on {dataset}.
+>{dataset}_trprpr.py performs pruning experiment on {dataset}.
 
-Note that {caltech} means CalTech 101 Silhouettes 16 $$\times$$ 16 dataset and {caltech0} means CalTech 101 Silhouettes 28 $$\times$$ 28 dataset.
+Note that {caltech} represents CalTech 101 Silhouettes 16 $$\times$$ 16 dataset and {caltech0} represents CalTech 101 Silhouettes 28 $$\times$$ 28 dataset.
 
 ### Instructions
 For example for training RBM on MNIST dataset
