@@ -42,7 +42,7 @@ tfrbm folder contains the code to build,train and evaluate RBM.
 
 >{dataset}_trprpr.py perform pruning experiment on {dataset}.
 
-Note that {caltech} means CalTech 101 Silhouettes 16$$\times$$16 dataset and {caltech0} means CalTech 101 Silhouettes 28$$\times$$28 dataset.
+Note that {caltech} means CalTech 101 Silhouettes 16 $$\times$$ 16 dataset and {caltech0} means CalTech 101 Silhouettes 28 $$\times$$ 28 dataset.
 
 ### Instructions
 For example for training RBM on MNIST dataset
